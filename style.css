@@ -275,6 +275,10 @@ p.presentation {
     text-align: justify;
 }
 
+a.presentation {
+    font-size: 16px;
+}
+
 ul {
     text-align: justify;
 }
@@ -806,14 +810,14 @@ p.ml {
 
 @media (min-width: 1025px) {
     .logo img {
-        max-width: 130px;
+        max-width: 170px;
         /* Taille pour les écrans de bureau */
     }
 }
 
 @media (min-width: 1441px) {
     .logo img {
-        max-width: 120px;
+        max-width: 200px;
         /* Taille pour les écrans très larges */
     }
 }

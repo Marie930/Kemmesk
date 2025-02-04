@@ -53,3 +53,50 @@ async function loadProjects() {
 // Charger les données au démarrage
 loadProjects();
 
+//Diaporama
+
+let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            dots[i].classList.toggle("active", i === index);
+        });
+    }
+
+    document.querySelector(".next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    document.querySelector(".prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            currentIndex = i;
+            showSlide(currentIndex);
+        });
+    });
+
+//Bouton de retour vers le haut
+
+document.addEventListener("DOMContentLoaded", function() {
+    let backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    backToTopButton.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});

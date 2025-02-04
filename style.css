@@ -1,0 +1,819 @@
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Appliquer la police Jost à tout le site */
+body {
+    font-family: 'Jost', sans-serif;
+    line-height: 1.6;
+    background-color: white;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+main.mainml {
+    margin: 10px;
+}
+
+
+/* Appliquer la police Zen Tokyo Zoo à des éléments spécifiques */
+h1.tagline {
+
+    font-family: "Zen Tokyo Zoo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+
+/* Appliquer la police Londrina Solid à des éléments spécifiques */
+h2 {
+    font-family: "Londrina Solid", serif;
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+h3 {
+    font-family: "Londrina Solid", serif;
+    padding: 10px;
+    font-size: 25px;
+}
+
+
+/* Appliquer la police Jost à des éléments spécifiques */
+
+p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+}
+
+/* Style pour la navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: black
+}
+
+.logo img {
+    max-width: 60px;
+    display: flex;
+}
+
+/* Style pour le bouton burger */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+}
+
+.menu-toggle .bar {
+    background: #15a8bb;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Par défaut, les liens de navigation sont cachés */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    background-color: #ffffffc7;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+/* Lorsque le menu est actif */
+.nav-links.active {
+    display: flex;
+}
+
+/* Animation pour le bouton burger actif */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*Style switch language*/
+.language-switch {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*SECTION PROJETS*/
+
+/* Par défaut (mobile) : 1 colonne */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    background-color: #f7405f;
+}
+
+.project-grid article {
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Ajuster la taille des images */
+.project-grid img {
+    width: 100%;
+    height: auto;
+}
+
+.projects-section img {
+    height: 400px;
+    object-fit: cover;
+    grid-area: photo;
+    border-radius: 1rem;
+}
+
+.project-item1 img,
+.project-item2 img,
+.project-item3 img,
+.project-item4 img,
+.project-item5 img,
+.project-item6 img {
+    width: 300px;
+    height: 400px;
+}
+
+h3.project {
+    color: white;
+}
+
+p.projects {
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+/*survole img projets & news*/
+.project-item1,
+.project-item2,
+.project-item3,
+.project-item4,
+.project-item5,
+.project-item6,
+.news-item1,
+.news-item2,
+.news-item3 {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item1 img,
+.project-item2 img,
+.project-item3 img,
+.project-item4 img,
+.project-item5 img,
+.project-item6 img,
+.news-item1 img,
+.news-item2 img,
+.news-item3 img {
+    display: block;
+
+}
+
+.project-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0 0 0 / 76%);
+    color: white;
+    padding: 10px;
+    text-align: justify;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    font-size: small;
+}
+
+.project-item1:hover .project-description,
+.project-item2:hover .project-description,
+.project-item3:hover .project-description,
+.project-item4:hover .project-description,
+.project-item5:hover .project-description,
+.project-item6:hover .project-description,
+.news-item1:hover .project-description,
+.news-item2:hover .project-description,
+.news-item3:hover .project-description {
+    opacity: 1;
+}
+
+/*SECTION EXPERTISE-NOS SERVICES*/
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.expertise-grid article {
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Ajuster la taille des images */
+.expertise-grid img {
+    width: 100%;
+    height: auto;
+}
+
+.expertise-section img {
+    height: 300px;
+    object-fit: cover;
+    grid-area: photo;
+    border-radius: 1rem;
+}
+
+.expertise-item img {
+    height: 300px;
+}
+
+p.expertise {
+    text-align: center;
+    font-weight: 500;
+}
+
+p.presentation {
+    text-align: justify;
+}
+
+ul {
+    text-align: justify;
+}
+
+li {
+    margin-left: 12px;
+}
+
+
+/*SECTION ACTUALITES*/
+/* Par défaut (mobile) : 1 colonne */
+.news-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.news-content article {
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Ajuster la taille des images */
+.news-content img {
+    width: 100%;
+    height: auto;
+}
+
+.news-section img {
+    height: 400px;
+    object-fit: cover;
+    grid-area: photo;
+    border-radius: 1rem;
+}
+
+.news-item1 img,
+.news-item2 img,
+.news-item3 img {
+    width: 300px;
+    height: 200px;
+}
+
+p.news {
+    text-align: center;
+    font-weight: 500;
+}
+
+/*SECTION ABOUT*/
+/* Par défaut (mobile) : 1 colonne */
+
+article.team-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.team-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* Ajuster la taille des images */
+.team-content img {
+    width: 100%;
+    height: auto;
+}
+
+.about-section img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    grid-area: photo;
+    border-radius: 50%;
+}
+
+.team-item img {
+    width: 200px;
+    height: 200px;
+}
+
+h3.name {
+    text-align: center;
+}
+
+article.presentation {
+    text-align: justify;
+}
+
+/*PHOTOS STUDIO*/
+
+/* Conteneur du diaporama */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Images du diaporama */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+/* Afficher la première image */
+.slide.active {
+    display: block;
+}
+
+/* Boutons précédent et suivant */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Points indicateurs */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: #15a8bbcc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #15a8bbcc;
+}
+
+/*PARTENAIRES*/
+
+.part1 img,
+.part2 img,
+.part3 img,
+.part4 img,
+.part5 img,
+.part6 img {
+    max-width: 60px;
+}
+
+h2.partners {
+    background-color: #f7405f;
+}
+
+.partner-content {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #f7405f;
+}
+
+article.part1 {
+    display: grid;
+    grid-template-areas:
+        "img1";
+}
+
+article.part2 {
+    display: grid;
+    grid-template-areas:
+        "img2";
+}
+
+article.part3 {
+    display: grid;
+    grid-template-areas:
+        "img3";
+}
+
+article.part4 {
+    display: grid;
+    grid-template-areas:
+        "img4";
+}
+
+article.part5 {
+    display: grid;
+    grid-template-areas:
+        "img5";
+}
+
+article.part6 {
+    display: grid;
+    grid-template-areas:
+        "img6";
+}
+
+
+article.part1 img {
+    grid-area: img1;
+}
+
+article.part2 img {
+    grid-area: img2;
+}
+
+article.part3 img {
+    grid-area: img3;
+}
+
+article.part4 img {
+    grid-area: img4;
+}
+
+article.part5 img {
+    grid-area: img5;
+}
+
+article.part6 img {
+    grid-area: img6;
+}
+
+/*FOOTER*/
+/* Style général du footer */
+footer {
+    background-color: #15a8bbcc;
+    padding: 20px;
+    font-size: 10px;
+}
+
+.footer-info {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "icon1 text1 icon3 text3"
+        "icon2 text2 icon4 text4";
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: start;
+}
+
+/*Positionnement des éléments*/
+.footer-info i:nth-of-type(1) {
+    grid-area: icon1;
+    /* Icône de localisation */
+}
+
+.footer-info p:nth-of-type(1) {
+    grid-area: text1;
+    /* Texte de l'adresse */
+}
+
+.footer-info i:nth-of-type(3) {
+    grid-area: icon3;
+    /* Icône gavel */
+}
+
+.footer-info p:nth-of-type(3) {
+    grid-area: text3;
+    /* Texte des mentions légales */
+}
+
+.footer-info i:nth-of-type(2) {
+    grid-area: icon2;
+    /* Icône téléphone */
+}
+
+.footer-info p:nth-of-type(2) {
+    grid-area: text2;
+    /* Texte du téléphone */
+}
+
+
+.footer-info i:nth-of-type(4) {
+    grid-area: icon4;
+    /* Icône copyright */
+}
+
+.footer-info p:nth-of-type(4) {
+    grid-area: text4;
+    /* Texte copyright */
+}
+
+
+
+/* Style des icônes et du texte */
+.footer-info i {
+    font-size: 20px;
+    color: #333;
+}
+
+.footer-info p {
+    margin: 0;
+    color: #333;
+    font-size: 10px;
+}
+
+.footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+a.footer {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+    color: black;
+}
+/* Bouton de retour vers le haut*/
+#backToTop {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #f7405f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+    background-color: #f7405f;
+    transform: scale(1.1);
+}
+
+#backToTop:active {
+    transform: scale(0.9);
+}
+
+/*MENTIONS LEGALES*/
+
+h1.ml {
+    font-family: 'Shrikhand', sans-serif;
+    text-align: left;
+}
+
+h2.ml {
+    text-align: left;
+}
+
+h3.ml {
+    text-align: left;
+}
+
+p.ml {
+    padding-bottom: 50px;
+}
+
+
+/*@MEDIA QUERY SECTION PROJETS & SEVICES*/
+/* Media query pour les grands écrans */
+@media (min-width: 768px) {
+
+    .project-grid,
+    .cinema-content,
+    .news-content,
+    .team-content {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colonnes pour les écrans de tablette et plus */
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .project-grid,
+    .cinema-content,
+    .news-content,
+    .team-content {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colonnes pour les écrans de tablette et plus */
+    }
+}
+
+/*@MEDIA QUERY SECTION EXPERTISE & NEWS*/
+/* Media query pour les grands écrans (3 colonnes à partir de 768px) */
+
+@media (min-width: 768px) {
+
+    .expertise-grid article {
+        text-align: center;
+        max-width: max-content;
+    }
+}
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*SECTION ABOUT*/
+/* Version bureau : 3 colonnes */
+@media screen and (min-width: 768px) {
+    .team-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "team1 team2 team3"
+            "presentation presentation presentation";
+        grid-gap: 20px;
+    }
+
+    /* Appliquer les zones définies aux articles */
+    article.team-item:nth-child(1) {
+        grid-area: team1;
+    }
+
+    article.team-item:nth-child(2) {
+        grid-area: team2;
+    }
+
+    article.team-item:nth-child(3) {
+        grid-area: team3;
+    }
+
+    article.presentation {
+        grid-area: presentation;
+        text-align: justify;
+    }
+
+    /* Ajuster la taille des images pour la version bureau */
+    .team-item img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .partner-content {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+}
+
+/*FOOTER ECRANS LARGES*/
+/* Mise en page pour les écrans plus larges (>=768px) */
+@media (min-width: 768px) {
+    .footer-info {
+        grid-template-columns: 25px 150px 25px 150px 25px 150px;
+        grid-template-areas:
+            "icon1 text1 icon3 text3 icon2 text2 icon4 text4";
+        grid-template-rows: 1fr;
+    }
+}
+
+.footer-info p {
+    font-size: 12px;
+}
+
+/* Styles pour les laptops et ordinateurs de taille moyenne */
+@media (min-width: 1024px) {
+    .footer-info {
+        grid-template-columns: 20px 120px 20px 120px 20px 120px 20px;
+        grid-template-areas: "icon1 text1 icon3 text3 icon2 text2 icon4 text4";
+    }
+}
+
+/*NAV*/
+@media (min-width: 768px) {
+    nav {
+        display: grid;
+        grid-template-areas: "logo tagline lemenu switch";
+        grid-template-columns: 10% 80% 5% 5%;
+        justify-items: center;
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .tagline {
+        grid-area: tagline;
+    }
+
+    h1.tagline {
+        font-size: 35px;
+    }
+
+    div#mobile-menu {
+        grid-area: lemenu;
+    }
+
+    .language-switch {
+        grid-area: switch;
+    }
+
+}
+
+/*MEDIA LOGO*/
+
+@media (min-width: 768px) {
+    .logo img {
+        max-width: 80px;
+        /* Taille pour les tablettes */
+    }
+}
+
+@media (min-width: 1025px) {
+    .logo img {
+        max-width: 130px;
+        /* Taille pour les écrans de bureau */
+    }
+}
+
+@media (min-width: 1441px) {
+    .logo img {
+        max-width: 120px;
+        /* Taille pour les écrans très larges */
+    }
+}

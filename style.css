@@ -607,9 +607,11 @@ a.footer {
     font-size: 12px;
     color: black;
 }
+
 /* Bouton de retour vers le haut*/
 #backToTop {
-    display: none; /* Caché par défaut */
+    display: none;
+    /* Caché par défaut */
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -679,13 +681,34 @@ p.ml {
 }
 
 /*@MEDIA QUERY SECTION EXPERTISE & NEWS*/
-/* Media query pour les grands écrans (3 colonnes à partir de 768px) */
+/* Media query pour les grands écrans */
 
 @media (min-width: 768px) {
 
     .expertise-grid article {
         text-align: center;
         max-width: max-content;
+    }
+
+    .expertise-grid {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "present present"
+            "services tech";
+    }
+
+    /* Ajout grid-area pour dispo vue bureau*/
+    article.expertise-item:nth-child(1) {
+        grid-area: present;
+    }
+
+    article.expertise-item1:nth-child(2) {
+        grid-area: services;
+    }
+
+    article.expertise-item2:nth-child(3) {
+        grid-area: tech;
     }
 }
 
@@ -708,8 +731,8 @@ p.ml {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         grid-template-areas:
-            "team1 team2 team3"
-            "presentation presentation presentation";
+            "team1 team2 team3";
+
         grid-gap: 20px;
     }
 

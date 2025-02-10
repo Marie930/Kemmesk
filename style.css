@@ -796,7 +796,7 @@ p.ml {
     nav {
         display: grid;
         grid-template-areas: "logo tagline lemenu switch";
-        grid-template-columns: 10% 80% 5% 5%;
+        grid-template-columns: 15% 75% 5% 5%;
         justify-items: center;
     }
 
